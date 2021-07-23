@@ -52,32 +52,31 @@ app.use(async (ctx, next) => {
 
 // => GET/POST
 
-// const tickets = [];
-
-// app.use(async ctx => {
-//     const { method } = ctx.request.query;
-//     console.log(method);
-
-//     switch (method) {
-//         case 'allTickets':
-//             console.log(ctx.request.query);
-//             return;
-//         case 'ticketById':
-//             console.log(ctx.request.query);
-//             return;
-//         case 'createTicket':
-//             console.log(ctx.request.body);
-//             return;
-//         default:
-//             ctx.response.status = 404;
-//             return;
-//     }
-// });
+const tickets = [
+  {
+    id: 1,
+    name: 'Поменять краску в принтере',
+    description: 'Кабинет 400, картридж на складе',
+    status: 'false',
+    created: new Date(),
+  },
+  {
+    id: 2,
+    name: 'Переустановить Windows',
+    description: 'ПК в кабинете 200',
+    status: 'false',
+    created: new Date(),
+  }
+];
 
 app.use(async ctx => {
-  console.log(ctx.request.query);
-  ctx.response.body = 'servver response';
+  ctx.response.body = tickets;
 });
+
+// app.use(async ctx => {
+//   console.log(ctx.request.query);
+//   ctx.response.body = 'servver response';
+// });
 
 const port = process.env.PORT || 7070;
 http.createServer(app.callback()).listen(port);
