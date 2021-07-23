@@ -52,26 +52,31 @@ app.use(async (ctx, next) => {
 
 // => GET/POST
 
-const tickets = [];
+// const tickets = [];
+
+// app.use(async ctx => {
+//     const { method } = ctx.request.query;
+//     console.log(method);
+
+//     switch (method) {
+//         case 'allTickets':
+//             console.log(ctx.request.query);
+//             return;
+//         case 'ticketById':
+//             console.log(ctx.request.query);
+//             return;
+//         case 'createTicket':
+//             console.log(ctx.request.body);
+//             return;
+//         default:
+//             ctx.response.status = 404;
+//             return;
+//     }
+// });
 
 app.use(async ctx => {
-    const { method } = ctx.request.query;
-    console.log(method);
-
-    switch (method) {
-        case 'allTickets':
-            console.log(ctx.request.query);
-            return;
-        case 'ticketById':
-            console.log(ctx.request.query);
-            return;
-        case 'createTicket':
-            console.log(ctx.request.body);
-            return;
-        default:
-            ctx.response.status = 404;
-            return;
-    }
+  console.log(ctx.request.query);
+  ctx.response.body = 'servver response';
 });
 
 const port = process.env.PORT || 7070;
