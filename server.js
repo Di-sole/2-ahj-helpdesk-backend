@@ -58,21 +58,21 @@ const tickets = [
     name: 'Поменять краску в принтере',
     description: 'Кабинет 400, картридж на складе',
     status: 'false',
-    created: new Date().toLocaleString(),
+    created: new Date(),
   },
   {
     id: 2,
     name: 'Переустановить Windows',
     description: 'ПК в кабинете 200',
     status: 'false',
-    created: new Date().toLocaleString(),
+    created: new Date(),
   },
   {
     id: 4,
     name: 'Встретить курьера',
     description: '12:00 у главного входа',
     status: 'false',
-    created: new Date().toLocaleString(),
+    created: new Date(),
   }
 ];
 
@@ -102,7 +102,7 @@ app.use(async ctx => {
           name: data.name,
           description: data.description,
           status: 'false',
-          created: new Date().toLocaleString(),
+          created: new Date(),
         };
   
         tickets.push(newTicket);
